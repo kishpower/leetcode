@@ -18,9 +18,9 @@ public class Solution {
             for (int j = 0 ; j < n ; j++){
                 char number = board[i][j];
                 if (number != '.'){
-                   if(!(seen.add(number + " in row " + i) ||
-                           seen.add(number + " in row " + j) ||
-                           seen.add(number + " in block " + i/3 + "-" + j/3)))
+                   if(!seen.add(number + " in row " + i) ||
+                           !seen.add(number + " in row " + j) ||
+                           !seen.add(number + " in block " + i/3 + "-" + j/3))
                        return false;
                 }
             }
