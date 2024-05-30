@@ -2,7 +2,7 @@ package SwapNodesinPairs24;
 
 import java.util.List;
 
-class Solution {
+public class Solution {
     public static void main(String[] args) {
 //        [1,2,3,4]
         ListNode ln = new ListNode(4);
