@@ -1,19 +1,21 @@
 package MinimumRecolorstoGetKConsecutiveBlackBlocks2379;
 
 public class Solution {
-    public int minimumRecolors(String blocks, int k) {
+    public int minimumRecolors(String blocks, int k)   {
         int n = blocks.length();
-        int result = k;
-        for (int i = 0; i <= n - k ; i++){
-            int wCount = 0;
-            String subString = blocks.substring(i, i + k);
-            for (char c :subString.toCharArray()){
-                if (c == 'W') wCount++;
-            }
-            result = Math.min(result, wCount);
-            if (result == 0) return result;
+        int wCount = 0;
+        for (int i = 0; i < k; i++){
+            if (blocks.charAt(i) == 'W') wCount++;
+        }
+        int ans = wCount;
+
+        for(int j = k ; j < n;j++){
+            if(blocks.charAt(j) == 'W') wCount++;
+            if(blocks.charAt(j - k) == 'W') wCount--;
+            ans = Math.min(ans, wCount);
         }
 
-        return result;
+        return ans;
     }
+
 }
